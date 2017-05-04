@@ -1,0 +1,19 @@
+<!-- 이 페이지는 각각의 글을 보여준다. permalink와 이 페이지가 둘 다 있는 이유는,
+	 front페이지에서도 이 템플릿을 저장된 글 수만큼 render 할 필요가 있기 때문이다.
+	 다시 말해, permalink와 front에서 쓸 하나의 포스트 템플릿이다. 				-->
+
+<div class="post">
+	<div class="post-heading">
+		<div class="post-title">
+			<a href="/post/{{ p.key.id() }}">{{ p.subject }}</a>
+		</div>
+
+		<div class="post-date">
+			{{ p.created.strftime("%b %d, %Y")}}
+		</div>
+	</div>
+
+	<div class="post-content">
+		{{ p._render_text | safe }}
+	</div>
+</div>

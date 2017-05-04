@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<img src="{{gmap_url}}" class="map">
+		</div>
+		<div class="col-md-6">
+			{{post.render() | safe}}
+		</div>
+	</div>
+	<div class="query-time">{{duration}}초 전에 쿼리를 요청했습니다</div>
+</div>
+{% endblock %}

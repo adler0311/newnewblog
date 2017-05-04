@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+	<img src="{{gmap_url}}" class="map">
+</div>
+
+
+{% for p in posts %}
+	{{p.render() | safe }}
+	<br><br>
+{% endfor %}
+
+<div class="query-time">{{duration}}초 전에 쿼리를 요청했습니다</div>
+
+{% endblock %}

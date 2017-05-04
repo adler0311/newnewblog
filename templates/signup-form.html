@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div id="signup-container">
+        <h2>가입하기</h2>
+        <form method="post">
+            <table class="table">
+                <tr>
+                    <td class="label">사용자 아이디</td>
+                    <td><input type="text" class="form-control" name="username" value="{{username}}"></td>
+                    <td class="error">{{error_username}}</td>
+                </tr><br>
+                <tr>
+                    <td class="label">비밀번호</td>
+                    <td><input type="password" class="form-control" name="password" value=""></td>
+                    <td class="error">{{error_password}}</td>
+                </tr><br>
+                <tr>
+                    <td class="label">비밀번호 확인</td>
+                    <td><input type="password" class="form-control" name="verify" value=""></td>
+                    <td class="error">{{error_verify}}</td>
+                </tr><br>
+                <tr>
+                    <td class="label">이메일 (선택)</td>
+                    <td><input type="text" class="form-control" name="email" value="{{email}}"></td>
+                    <td class="error">{{error_email}}</td>
+                </tr><br>
+            </table>
+            <input class="btn btn-lg btn-primary btn-block" type="submit" value="가입">
+        </form>
+    </div>
+</div>
+{% endblock %}

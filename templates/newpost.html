@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container" id="form-container">
+	<form class="form-signin" method="post">
+		<h2 class="form-signin-heading">새 글을 작성하세요</h2>
+		<br>
+		<label class="sr-only">글 제목</label>
+		<input type="text" class="form-control" name="subject" value="{{subject}}" placeholder="제목을 입력하세요" required autofocus>
+		<br>
+		<label class="sr-only">글 내용</label>
+		<textarea class="form-control" rows="10" name="content" value="{{content}}" placeholder="내용을 입력하세요" required></textarea>
+		<br>
+		<div class="error">
+			{{error}}
+		</div>
+		<br>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">작성하기</button>
+	</form>
+</div>
+
+
+{% endblock %}

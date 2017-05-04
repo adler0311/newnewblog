@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	
+	<link rel="icon" type="image/png" sizes="96x96" href="/static/favicon-96x96.png">
+
+	<title>망고 블로그</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="/static/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="/static/cover.css" rel="stylesheet">
+
+</head>
+<body>
+	<div class="site-wrapper">
+		<div class="site-wrapper-inner">
+			<div class="cover-container">
+				<div class="masthead clearfix">
+					<div class="inner">
+						<!--<img src="/static/mango.jpg" id="mango-img">-->
+						<h3 class="masthead-brand">
+						{% if user %}
+							{{user.name}}님, 
+						{% endif %} 망고 블로그에 오신 걸 환영합니다</h3>
+						<nav>
+							<ul class="nav masthead-nav">
+
+								<li class="active"><a href="/blog">메인</a></li>
+								<li><a href="/newpost">글쓰기</a></li>
+
+								{% if user %}
+									<li><a href="/logout">로그아웃</a></li>
+								{% else %}
+									<li><a href="/signup">가입</a></li>
+									<li><a href="/login">로그인</a></li>
+								{% endif %}
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<div class="inner cover">
+				{% block content %}
+				{% endblock %}
+			</div>
+		</div>
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="/static/bootstrap.min.js"></script>
+</body>
+</html>
